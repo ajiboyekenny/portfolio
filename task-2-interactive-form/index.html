@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive interactive form by Kehinde Ajiboye with real-time validation and password-strength feedback.">
+  <meta name="author" content="Kehinde Ajiboye">
+  <meta property="og:title" content="Interactive Form — Kehinde Ajiboye">
+  <meta property="og:description" content="A frontend internship project with instant validation, clear feedback, and documented backend integration.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Interactive Form — Kehinde Ajiboye</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar"><a class="logo" href="../task-1-portfolio/index.html">KA<span>.</span>dev</a><a href="../task-1-portfolio/index.html">← Back to portfolio</a></header>
+  <main class="page">
+    <div class="layout">
+      <aside class="intro">
+        <span class="tag">TASK 2 · INTERACTIVE FORM</span>
+        <h1>Join in under a minute.</h1>
+        <p>Fill in your details—we’ll guide you as you type.</p>
+        <ul><li><b>⚡ Real-time validation</b><span>Helpful feedback while you complete each field.</span></li><li><b>✓ Secure by default</b><span>The live version checks and hashes passwords on the server.</span></li><li><b>▣ Saved to the cloud</b><span>The live project stores valid submissions safely.</span></li></ul>
+      </aside>
+      <section class="form-side" aria-labelledby="form-title">
+        <p class="kicker">SECURE REGISTRATION</p><h2 id="form-title">Create your account</h2><p class="sub">All fields are required.</p>
+        <form id="signup-form" novalidate>
+          <div class="progress-label"><span id="editing-label">Progress</span><span id="progress-count">0/4 complete</span></div><div class="progress"><i id="progress-bar"></i></div>
+          <div class="field"><label for="fullName">Full name <b>*</b></label><div class="input-wrap"><span>◯</span><input id="fullName" name="fullName" autocomplete="name" placeholder="Jane Doe" required><em class="valid">✓</em></div><p class="error" id="fullName-error"></p></div>
+          <div class="field"><label for="email">Email address <b>*</b></label><div class="input-wrap"><span>✉</span><input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="jane@example.com" required><em class="valid">✓</em></div><p class="error" id="email-error"></p></div>
+          <div class="field"><label for="phone">Phone number <b>*</b></label><div class="input-wrap"><span>☎</span><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+234 801 234 5678" required><em class="valid">✓</em></div><small>Include country code, e.g. +234</small><p class="error" id="phone-error"></p></div>
+          <div class="field"><label for="password">Password <b>*</b></label><div class="input-wrap"><span>⌑</span><input id="password" name="password" type="password" autocomplete="new-password" placeholder="Create a strong password" required><button id="toggle-password" type="button" aria-label="Show password">Show</button></div><div id="strength" class="strength" hidden><div class="bars"><i></i><i></i><i></i><i></i><i></i></div><span id="strength-label"></span><ul id="checks"></ul></div><p class="error" id="password-error"></p></div>
+          <p id="form-message" class="form-message" role="alert" hidden></p>
+          <button class="submit" type="submit">Create account</button>
+          <p class="note">The standalone demo does not transmit passwords. The live app hashes them before database storage.</p>
+        </form>
+        <div id="success" class="success" role="status" hidden><div>✓</div><h2>You're all set, <span id="first-name"></span>!</h2><p>Your details passed every validation check.</p><nav><button id="another" type="button">Submit another response</button><a href="../task-1-portfolio/index.html">Back to portfolio</a></nav></div>
+      </section>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
